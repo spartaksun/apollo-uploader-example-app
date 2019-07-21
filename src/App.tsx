@@ -41,7 +41,6 @@ class App extends React.Component {
                     >
                         {({data}: { data: { uploading: FileUploadProcess[] } }) =>
                             data.uploading.map((process: FileUploadProcess) => {
-                                const result = JSON.parse(process.result);
 
                                 return (
                                     <tr key={process.id}>
@@ -51,7 +50,7 @@ class App extends React.Component {
                                         <td> {process.loaded} </td>
                                         <td> {process.fileSize} </td>
                                         <td> {process.total} </td>
-                                        <td> {result.id} </td>
+                                        <td> {process.result && JSON.parse(process.result).id} </td>
                                         <td> {process.error} </td>
                                     </tr>
                                 )
