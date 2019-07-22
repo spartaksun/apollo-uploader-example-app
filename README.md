@@ -1,2 +1,9 @@
 ### Apollo Uploader Demo React application
-##### See https://www.npmjs.com/package/apollo-uploader
+##### See [apollo-uploader](https://github.com/spartaksun/apollo-uploader)
+
+```
+yarn start
+```
+```
+node server.js
+```

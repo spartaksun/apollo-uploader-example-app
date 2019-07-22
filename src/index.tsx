@@ -8,15 +8,15 @@ import gql from "graphql-tag";
 import App from './App';
 
 const mutation = gql`
-    mutation uploadFile($file: Upload!, $bucket: String, $crop: CropInput ) {
-        uploadFile(file: $file, bucket: $bucket, crop: $crop) {
+    mutation uploadFile($file: Upload!) {
+        uploadFile(file: $file) {
             id
         }
     }
 `;
 
 const apolloClient = new ApolloClient({
-    link: createUploadLink('http://localhost'), // concat with your other links (i.e. http, error etc.)
+    link: createUploadLink('http://localhost:4000/'),
     cache: new InMemoryCache({})
 });
 Uploader.init({
